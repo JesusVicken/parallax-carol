@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Parallax com Vídeo</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <main>
+
+            <!-- VIDEO 1 - C0003 -->
+            <section class="module parallax">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/C0003 - Cor.mp4" type="video/mp4">
+                </video>
+                <h1>Sujeito Programador</h1>
+            </section>
+
+            <section class="module content">
+                <div class="container">
+                    <h2>Conteúdo 1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam reiciendis unde voluptatem
+                        dignissimos!</p>
+                    <p>Adipisci alias rerum commodi ad excepturi. Quod aut maxime non architecto numquam vel et.</p>
+                </div>
+            </section>
+
+            <!-- VIDEO 2 - C0005 -->
+            <section class="module parallax">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/C0005 - Cor.mp4" type="video/mp4">
+                </video>
+                <h1>Texto 2</h1>
+            </section>
+
+            <section class="module content">
+                <div class="container">
+                    <h2>Conteúdo 2</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam reiciendis unde voluptatem
+                        dignissimos!</p>
+                    <p>Adipisci alias rerum commodi ad excepturi. Quod aut maxime non architecto numquam vel et.</p>
+                </div>
+            </section>
+
+            <!-- VIDEO 3 - C0008 -->
+            <section class="module parallax">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/C0008 - Cor.mp4" type="video/mp4">
+                </video>
+                <h1>Texto 3</h1>
+            </section>
+
+            <section class="module content">
+                <div class="container">
+                    <h2>Conteúdo 3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam reiciendis unde voluptatem
+                        dignissimos!</p>
+                    <p>Adipisci alias rerum commodi ad excepturi. Quod aut maxime non architecto numquam vel et.</p>
+                </div>
+            </section>
+
+            <!-- VIDEO 4 - C0011 -->
+            <section class="module parallax">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/C0011 - Cor.mp4" type="video/mp4">
+                </video>
+                <h1>Texto 4</h1>
+            </section>
+
+            <section class="module content">
+                <div class="container">
+                    <h2>Conteúdo 4</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam reiciendis unde voluptatem
+                        dignissimos!</p>
+                    <p>Adipisci alias rerum commodi ad excepturi. Quod aut maxime non architecto numquam vel et.</p>
+                </div>
+            </section>
+
+            <!-- VIDEO 5 - C0014 -->
+            <section class="module parallax">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/C0014 - Cor.mp4" type="video/mp4">
+                </video>
+                <h1>Texto 5</h1>
+            </section>
+
+            <section class="module content">
+                <div class="container">
+                    <h2>Conteúdo Final</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam reiciendis unde voluptatem
+                        dignissimos!</p>
+                    <p>Adipisci alias rerum commodi ad excepturi. Quod aut maxime non architecto numquam vel et.</p>
+                    <p>Este é o último conteúdo com o quinto vídeo parallax.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- SCRIPT DO PARALLAX -->
+    <script>
+        const sections = document.querySelectorAll('.parallax');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+
+            sections.forEach(section => {
+                const video = section.querySelector('video');
+                const speed = 0.5; // quanto menor, mais devagar o vídeo se move
+
+                if (video) {
+                    const offset = section.offsetTop;
+                    const yPos = (scrollTop - offset) * speed;
+                    video.style.transform = `translate3d(0, ${yPos}px, 0)`;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
